@@ -1,0 +1,61 @@
+Refer this inCombination with the Google DOC
+
+0. What is Concurrency?
+    -> ( Multi-tasking QUICKLY  between multiple threads )
+    For a single core CPU, at any given point of time only ONE thread is executing,
+    Computer switches between the thread so fast that
+    we get an illusion that all the task are happening at the same time
+
+    T1 -> Thread1,  T1 handles Task1
+    T2 -> Thread2,  T2 handles Task2
+
+
+    eg -> Task1, Task2, Task1, Task2
+            T1,     T2,     T1,    T2
+
+
+1. Why we need Threads?
+
+a   Responsiveness
+    If we use a Single Threaded application
+    then suppose if there are multiple requests to our application,
+    then TILL THE TIME  thread T1  has not completed responding to First request
+    T1 won't be able to process Second request
+    T1 cannot handle more than one request simultaneously
+
+    Examples of poor responsiveness
+        - No Feedback from an application, for our request
+
+
+    Multithreading allows us to serve each request using a Separate Thread
+
+    Example
+        - While we play a movie, one thread is playing the images, one thread is running the audio
+            and one thread will respond to our activity (pause, play, forward)  etc.
+            Each Thread for a particular task.
+
+b  Performance
+    Multithreading can help us complete a complex task much FASTER.
+    Fewer machines -> Helps to reduce the hardware cost.
+
+
+OS Fundamentals
+
+2. What is OS?
+
+- It's an Application which provides an interface to communicate with the Hardware.
+
+
+3. What is Process?
+
+- It's an instance of Application which is running in the memory (RAM)
+- One process is completely independent of any other process in the Computer     - NOTE
+
+Content of the Process
+
+
+
+
+
+
+
