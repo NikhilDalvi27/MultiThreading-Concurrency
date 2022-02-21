@@ -8,7 +8,7 @@ public class InterruptExample {
         thread1.start();
         thread1.interrupt();
         /** Here we are sending interrupt signal
-         To the BlockingTask thread (Which is sleeeping, hence interrupt respected)
+         To the BlockingTask thread (Which has a sleep method, that throws Interrupted Exception)
          From the main thread**/
 
 
@@ -22,9 +22,13 @@ public class InterruptExample {
 //        thread2.interrupt();
 
         /** Here we are sending interrupt signal
-         To the LongComputationTask thread (Which is doing some calculation, hence interrupt NOT respected)
+         To the LongComputationTask thread (Which is doing some calculation
+                                            and  doesn't have a  method that throws Interrupted Exception)
          From the main thread
-         To respect the interrupt we need to add some Logic to handle interrupt in LongComputationTask thread **/
+         IMP
+         To respect the interrupt
+         we need to add some Logic (Check the status of the Interrupt Flag in the run() method )
+         to handle interrupt in LongComputationTask thread **/
 
 
 

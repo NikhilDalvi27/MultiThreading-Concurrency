@@ -1,10 +1,11 @@
-package ResourceSharing;
+package DataSharing;
 
 public class InventoryExample {
 
     public static void main(String[] args) throws InterruptedException {
 //        InventoryCounter inventoryCounter = new InventoryCounter();
         InventoryCounter1 inventoryCounter = new InventoryCounter1();
+
 
         /** Note same inventory Object is passed to both Incrementing and Decrementing Thread **/
         IncrementingThread incrementingThread = new IncrementingThread(inventoryCounter);
@@ -78,7 +79,7 @@ public class InventoryExample {
     }
 
     private static class InventoryCounter1 {
-        private int items = 0;
+        private int items = 0;/** Instance variable belongs to the class, will live on heap, hence shared between threads **/
 
         /** NOTE the usage of synchronized blocks  **/
 
