@@ -1,5 +1,31 @@
 package Intro;
 
+/** Method 1  **/
+class Multi extends Thread{         /** Note this class extends the Thread class **/
+    public void run(){              /**  Hence we can Override the run of the parent class
+                                        which is thread class in this case **/
+        System.out.println("thread is running...");
+    }
+    public static void main(String args[]){
+        Multi t1=new Multi();
+        t1.start();
+    }
+}
+
+/** Method 2 **/
+class Multi3 implements Runnable{
+    public void run(){
+        System.out.println("thread is running...");
+    }
+
+    public static void main(String args[]){
+        Multi3 m1=new Multi3();
+        Thread t1 =new Thread(m1);   /** Using constructor of thread class which accepts runnable as an argument **/
+        t1.start();
+    }
+}
+
+
 public class Intro {
     public static void main(String[] args) throws InterruptedException {
 
@@ -45,6 +71,16 @@ public class Intro {
 
 
 
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("We are in the new thread "+ Thread.currentThread().getName());
+                System.out.println("Current thread priority is "+ Thread.currentThread().getPriority());
+            }
+        });
+
+
+
 
         /**  Other way of creating a Thread **/
 
@@ -66,3 +102,5 @@ public class Intro {
 
 
 }
+
+
